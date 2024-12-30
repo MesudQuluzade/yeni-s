@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Technodestek.com - Kompüter təmiri, xidmətləri və texniki dəstək. Peşəkar komandamızla, yüksək keyfiyyətli xidmətlərimizlə sizin texnoloji problemlərinizi həll edirik.">
+    <meta name="keywords"
+        content="kompüter təmiri, texniki dəstək, laptop təmiri, proqram quraşdırma, şəbəkə problemləri, texnoloji xidmətlər">
+    <!-- Font Awesome Library for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <!-- Tailwind CSS Framework -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Technodestek - Kompüter Xidmətləri</title>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="flex justify-between items-center p-4 lg:p-6">
+            <a href="#" class="text-2xl font-bold text-gray-700">
+                Technodestek.com
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav id="navbar" class="hidden md:flex gap-8">
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Ana Səhifə</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Xidmətlər</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Haqqımızda</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Əlaqə</a>
+            </nav>
+
+            <!-- Language Switcher -->
+            <div class="hidden md:flex gap-2 items-center relative">
+                <button class="flex items-center gap-2 text-gray-700" onclick="toggleLanguageMenu()">
+                    <span id="selectedLanguage">AZ</span>
+                    <img id="languageFlag" src="./assets/images/flag.svg" alt="Flag" class="h-5 w-8">
+                    <i class="fas fa-chevron-down text-sm"></i>
+                </button>
+
+                <!-- Language Dropdown Menu -->
+                <div id="languageMenu"
+                    class="language-menu absolute top-full right-0 mt-2 bg-white shadow-lg rounded-lg w-40 p-2 hidden">
+                    <div class="flex items-center gap-2 text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-md"
+                        onclick="changeLanguage('AZ', './assets/images/flag.svg')">
+                        <img src="./assets/images/flag.svg" alt="AZ Flag" class="h-5 w-8"> AZ
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-md"
+                        onclick="changeLanguage('EN', './assets/images/eng.svg')">
+                        <img src="./assets/images/eng.svg" alt="EN Flag" class="h-5 w-8"> EN
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-md"
+                        onclick="changeLanguage('RU', './assets/images/russian-flag.svg')">
+                        <img src="./assets/images/russian-flag.svg" alt="RU Flag" class="h-5 w-8"> RU
+                    </div>
+                </div>
+            </div>
+            <i class="fas fa-bars menu-toggle flex md:hidden text-2xl text-gray-700 cursor-pointer"></i>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <nav class="hidden mobile-nav-links md:hidden bg-white shadow-lg p-5">
+            <a href="#" class="block text-gray-700 hover:text-blue-600 py-2">Ana Səhifə</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600 py-2">Xidmətlər</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600 py-2">Haqqımızda</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600 py-2">Əlaqə</a>
+
+            <!-- Mobile Language Switcher -->
+            <div class="mt-4">
+                <!-- Button for Selecting Language on Mobile -->
+                <button class="flex items-center gap-2 text-gray-700" onclick="toggleLanguageMenu()">
+                    <span id="selectedLanguageMobile">AZ</span>
+                    <img id="languageFlagMobile" src="./assets/images/flag.svg" alt="Flag" class="h-5 w-8">
+                    <i class="fas fa-chevron-down text-sm"></i>
+                </button>
+
+                <!-- Mobile Language Dropdown Menu -->
+                <div id="languageMenuMobile" class="language-menu hidden mt-2 bg-white shadow-lg rounded-lg p-2">
+                    <div class="flex items-center gap-2 text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-md"
+                        onclick="changeLanguage('AZ', './assets/images/flag.svg', 'Mobile')">
+                        <img src="./assets/images/flag.svg" alt="AZ Flag" class="h-5 w-8"> AZ
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-md"
+                        onclick="changeLanguage('EN', './assets/images/eng.svg', 'Mobile')">
+                        <img src="./assets/images/eng.svg" alt="EN Flag" class="h-5 w-8"> EN
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-md"
+                        onclick="changeLanguage('RU', './assets/images/russian-flag.svg', 'Mobile')">
+                        <img src="./assets/images/russian-flag.svg" alt="RU Flag" class="h-5 w-8"> RU
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Header Section Ends -->
+
+
+
+    <!-- Hero Section Starts -->
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 px-4 md:px-6 lg:px-20 py-10 md:py-20 mt-20">
+        <!-- Left Section -->
+        <div class="flex flex-col justify-center text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 hero-heading">
+                Kompüterinizi <span class="text-blue-700">Bizə Həvalə Edin</span>
+            </h1>
+            <p class="text-lg text-gray-700 mb-4 hero-description">
+                Sürətli, etibarlı və peşəkar xidmət üçün bizimlə əlaqə saxlayın!
+            </p>
+            <ul class="space-y-2 text-gray-600 hero-services">
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check text-blue-600"></i>
+                    <span>Proqramların Quraşdırılması</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check text-blue-600"></i>
+                    <span>Hardware Yoxlaması</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check text-blue-600"></i>
+                    <span>Şəbəkə Problemlərinin Həlli</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check text-blue-600"></i>
+                    <span>Texniki Yardım</span>
+                </li>
+            </ul>
+        </div>
+        <!-- Right Section -->
+        <div class="flex justify-center items-center mt-10 md:mt-0">
+            <div class="rotating-cube grid grid-rows-3 grid-cols-2 gap-2 max-w-xs md:max-w-md">
+                <div class="cube-face front">Kompüter Təmir</div>
+                <div class="cube-face back">Laptop Yoxlaması</div>
+                <div class="cube-face right">Proqram Təminatı</div>
+                <div class="cube-face left">Şəbəkə Xidmətləri</div>
+                <div class="cube-face top">Virus Təmizləmə</div>
+                <div class="cube-face bottom">Diaqnostika və Təmizlik</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section Ends -->
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
